@@ -675,6 +675,27 @@ button {
   margin-top: 55px;
   align-items: start;
 }
+.about-image {
+  margin-top: 55px;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 18px;
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(.78);
+  transition: transform .6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.03);
+}
 
 /* SERVICES */
 .services {
@@ -723,24 +744,21 @@ button {
 .service-photo {
   height: 165px;
   border-radius: 13px;
-  display: grid;
-  place-items: center;
-  background:
-    linear-gradient(135deg, rgba(255,189,22,.22), transparent),
-    linear-gradient(145deg, #424242, #151515);
   overflow: hidden;
+  position: relative;
 }
 
-.photo-two {
-  background: linear-gradient(145deg, #393939, #0e0e0e);
+.service-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease, filter .5s ease;
 }
 
-.photo-three {
-  background: linear-gradient(145deg, #4a3820, #121212);
-}
-
-.photo-four {
-  background: linear-gradient(145deg, #242d35, #090909);
+.service-card:hover .service-photo img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
 .service-card h3 {
@@ -810,11 +828,21 @@ button {
 
 .project-photo {
   height: 390px;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 60% 45%, rgba(255,189,22,.22), transparent 25%),
-    linear-gradient(135deg, #373737, #090909);
+  overflow: hidden;
+  position: relative;
+}
+
+.project-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease, filter .5s ease;
+}
+
+.project-feature:hover .project-photo img {
+  transform: scale(1.03);
+  filter: brightness(1.05);
 }
 
 .project-info {
@@ -979,11 +1007,18 @@ button {
   flex: 0 0 75%;
   height: 390px;
   border-radius: 17px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(145deg, #3a3a3a, #0c0c0c);
+  overflow: hidden;
+  position: relative;
+  background: #111;
   opacity: .4;
   transition: .4s;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .gallery-item.active {
@@ -1010,13 +1045,31 @@ button {
 }
 
 /* REVIEWS */
-.review-card {
+.review-slider {
   margin-top: 45px;
-  min-height: 320px;
+  overflow: hidden;
   border: 1px solid #3d3d3d;
   border-radius: 18px;
+}
+
+.review-track {
+  display: flex;
+  transition: transform .6s cubic-bezier(.22, .61, .36, 1);
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.review-track:active {
+  cursor: grabbing;
+}
+
+.review-card {
+  flex: 0 0 100%;
+  min-height: 320px;
   padding: 30px 25px;
   position: relative;
+  box-sizing: border-box;
+  background: #080808;
 }
 
 .stars {
@@ -1037,14 +1090,27 @@ button {
   font-size: 13px;
 }
 
-.review-controls {
-  position: absolute;
-  right: 22px;
-  bottom: 22px;
+.review-dots {
   display: flex;
-  gap: 7px;
+  gap: 8px;
+  margin-top: 18px;
+  justify-content: center;
 }
 
+.review-dot {
+  width: 28px;
+  height: 3px;
+  border: 0;
+  padding: 0;
+  background: #444;
+  cursor: pointer;
+  transition: background .3s, width .3s;
+}
+
+.review-dot.active {
+  width: 42px;
+  background: var(--yellow);
+}
 /* CONTACT */
 .contact {
   background: var(--yellow);
