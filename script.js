@@ -77,6 +77,37 @@ document.getElementById("galleryNext").addEventListener("click", () => {
   setGallery(galleryIndex + 1);
 });
 
+
+// GALLERY SWIPE SUPPORT
+
+let galleryTouchStartX = 0;
+let galleryTouchEndX = 0;
+
+galleryItems.forEach((item) => {
+
+  item.addEventListener("touchstart", (e) => {
+    galleryTouchStartX = e.touches[0].clientX;
+  }, { passive: true });
+
+  item.addEventListener("touchend", (e) => {
+    galleryTouchEndX = e.changedTouches[0].clientX;
+
+    const swipeDistance = galleryTouchEndX - galleryTouchStartX;
+
+    if (Math.abs(swipeDistance) > 50) {
+
+      if (swipeDistance < 0) {
+        // Swipe left → next image
+        setGallery(galleryIndex + 1);
+      } else {
+        // Swipe right → previous image
+        setGallery(galleryIndex - 1);
+      }
+
+    }
+  }, { passive: true });
+
+});
 /* REVIEWS */
 const reviews = [
   {
@@ -93,21 +124,85 @@ const reviews = [
   }
 ];
 
+const reviewTrack = document.getElementById("reviewTrack");
+const reviewDots = document.getElementById("reviewDots");
+
 let reviewIndex = 0;
+let reviewTimer;
+
+reviews.forEach((review, index) => {
+  const card = document.createElement("div");
+  card.className = "review-card";
+
+  card.innerHTML = `
+    <div class="stars">★★★★★</div>
+    <p>${review.text}</p>
+    <strong>${review.name}</strong>
+  `;
+
+  reviewTrack.appendChild(card);
+
+  const dot = document.createElement("button");
+  dot.className = "review-dot";
+  dot.setAttribute("aria-label", `Go to review ${index + 1}`);
+
+  dot.addEventListener("click", () => {
+    setReview(index);
+    restartReviewTimer();
+  });
+
+  reviewDots.appendChild(dot);
+});
+
+const reviewDotElements = document.querySelectorAll(".review-dot");
 
 function setReview(index) {
   reviewIndex = (index + reviews.length) % reviews.length;
-  document.getElementById("reviewText").textContent = reviews[reviewIndex].text;
-  document.getElementById("reviewName").textContent = reviews[reviewIndex].name;
+
+  reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
+
+  reviewDotElements.forEach((dot, i) => {
+    dot.classList.toggle("active", i === reviewIndex);
+  });
 }
 
-document.getElementById("reviewPrev").addEventListener("click", () => {
-  setReview(reviewIndex - 1);
-});
+function startReviewTimer() {
+  reviewTimer = setInterval(() => {
+    setReview(reviewIndex + 1);
+  }, 5000);
+}
 
-document.getElementById("reviewNext").addEventListener("click", () => {
-  setReview(reviewIndex + 1);
-});
+function restartReviewTimer() {
+  clearInterval(reviewTimer);
+  startReviewTimer();
+}
+
+setReview(0);
+startReviewTimer();
+// REVIEW SWIPE SUPPORT
+let reviewTouchStartX = 0;
+let reviewTouchEndX = 0;
+
+reviewTrack.addEventListener("touchstart", (e) => {
+  reviewTouchStartX = e.touches[0].clientX;
+  clearInterval(reviewTimer);
+}, { passive: true });
+
+reviewTrack.addEventListener("touchend", (e) => {
+  reviewTouchEndX = e.changedTouches[0].clientX;
+
+  const swipeDistance = reviewTouchEndX - reviewTouchStartX;
+
+  if (Math.abs(swipeDistance) > 50) {
+    if (swipeDistance < 0) {
+      setReview(reviewIndex + 1);
+    } else {
+      setReview(reviewIndex - 1);
+    }
+  }
+
+  startReviewTimer();
+}, { passive: true });
 
 /* SCROLL REVEALS */
 const revealTargets = document.querySelectorAll(
