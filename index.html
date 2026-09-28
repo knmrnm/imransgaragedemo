@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Imran's Garage — automotive service, builds, modifications and detailing.">
+  <title>Imran's Garage | Automotive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <!-- INTRO -->
+<div class="intro" id="intro" aria-hidden="true">
+
+  <div class="tachometer">
+
+    <div class="tachometer-ring"></div>
+
+    <div class="tachometer-marks">
+      <span>0</span>
+      <span>2</span>
+      <span>4</span>
+      <span>6</span>
+      <span>8</span>
+    </div>
+
+    <div class="tachometer-needle"></div>
+    <div class="tachometer-center"></div>
+
+    <div class="rpm-label">RPM ×1000</div>
+  </div>
+
+  <div class="garage-logo">
+    <div class="garage-kicker">AUTOMOTIVE • BUILDS • GARAGE</div>
+    <h1>IMRAN'S <span>GARAGE</span></h1>
+    <div class="garage-line"></div>
+  </div>
+
+</div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <button class="icon-btn menu-trigger" id="menuTrigger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="brand" href="#home" aria-label="Imran's Garage home">
+      <span>IMRAN'S</span> GARAGE
+    </a>
+
+    <a class="header-cta" href="#contact">CONTACT</a>
+  </header>
+
+  <!-- DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <div class="drawer-brand">IMRAN'S <span>GARAGE</span></div>
+      <button class="close-btn" id="closeMenu" aria-label="Close menu">×</button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+
+      <button class="drawer-dropdown" id="servicesToggle" aria-expanded="false">
+        <span>Services</span><span class="chevron">⌄</span>
+      </button>
+
+      <div class="drawer-subnav" id="servicesSubnav">
+        <a href="#services">Car Service</a>
+        <a href="#services">Car Detailing</a>
+        <a href="#services">Customisation</a>
+        <a href="#services">Performance</a>
+        <a href="#services">Diagnostics</a>
+      </div>
+
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="drawer-bottom">
+      <div class="drawer-actions">
+        <a href="#contact" class="small-btn filled">WhatsApp</a>
+        <a href="tel:+910000000000" class="small-btn">Call</a>
+      </div>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+        <a href="#" aria-label="Facebook">FB</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="home">
+      <div class="hero-image">
+        <div class="hero-image-placeholder">
+          <span>YOUR HERO CAR PHOTO</span>
+        </div>
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content container">
+        <p class="eyebrow">IMRAN'S GARAGE</p>
+        <h2>WE DON'T JUST<br><span>WORK ON CARS.</span></h2>
+        <p class="hero-copy">Built around cars, craftsmanship and the people who love them.</p>
+        <a class="yellow-btn" href="#services">EXPLORE THE GARAGE <span>↗</span></a>
+      </div>
+
+      <div class="hero-scroll">SCROLL <span>↓</span></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container">
+        <p class="eyebrow">01 / ABOUT</p>
+        <h2 class="section-title">MORE THAN A <span>GARAGE.</span></h2>
+
+        <div class="about-grid">
+          <div>
+            <p class="lead">A place where cars come in ordinary and leave with a little more personality.</p>
+          </div>
+          <div>
+            <p class="body-copy">
+              Imran's Garage is built around real work, real cars and a genuine passion for the automotive world.
+              From everyday care to custom builds, every project gets attention to detail.
+              We also post tips and hacks about car issues!
+            </p>
+            <a href="#projects" class="text-link">SEE OUR WORK <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">02 / SERVICES</p>
+            <h2 class="section-title">WHAT WE <span>DO.</span></h2>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <div class="service-photo photo-one"><span>PHOTO</span></div>
+            <h3>CAR SERVICE</h3>
+            <p>Routine care, inspection and maintenance for your car.</p>
+            <a href="#contact">LEARN MORE ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <div class="service-photo photo-two"><span>PHOTO</span></div>
+            <h3>DETAILING</h3>
+            <p>Exterior and interior care focused on a clean finish.</p>
+            <a href="#contact">LEARN MORE ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <div class="service-photo photo-three"><span>PHOTO</span></div>
+            <h3>CUSTOMISATION</h3>
+            <p>Personal touches that make your car feel like yours.</p>
+            <a href="#contact">LEARN MORE ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <div class="service-photo photo-four"><span>PHOTO</span></div>
+            <h3>DIAGNOSTICS</h3>
+            <p>Practical checks to identify issues before they become bigger problems.</p>
+            <a href="#contact">LEARN MORE ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section stats-section">
+      <div class="container stats-grid">
+        <div class="stat"><strong>500K+</strong><span>COMMUNITY</span></div>
+        <div class="stat"><strong>01</strong><span>GARAGE</span></div>
+        <div class="stat"><strong>100%</strong><span>PASSION</span></div>
+        <div class="stat"><strong>∞</strong><span>BUILDS</span></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <p class="eyebrow">03 / PROJECTS</p>
+        <h2 class="section-title">BUILT <span>HERE.</span></h2>
+
+        <div class="project-feature">
+          <div class="project-photo"><span>YOUR PROJECT PHOTO</span></div>
+          <div class="project-info">
+            <p class="project-number">PROJECT / 001</p>
+            <h3>THE NEXT <span>BUILD.</span></h3>
+            <p>Replace this section with one of Imran's actual builds. Add the car, modifications and story here.</p>
+            <a class="yellow-btn" href="#contact">VIEW PROJECT <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="section social-section">
+      <div class="container">
+        <p class="eyebrow">04 / SOCIAL</p>
+        <h2 class="section-title">FOLLOW THE <span>JOURNEY.</span></h2>
+
+        <div class="social-cards">
+          <a href="#" class="social-card instagram">
+            <small>INSTAGRAM</small>
+            <strong>500K+</strong>
+            <span>FOLLOW THE BUILDS ↗</span>
+          </a>
+
+          <a href="#" class="social-card youtube">
+            <small>YOUTUBE</small>
+            <strong>VLOGS</strong>
+            <span>WATCH NOW ↗</span>
+          </a>
+
+          <a href="#" class="social-card facebook">
+            <small>FACEBOOK</small>
+            <strong>COMMUNITY</strong>
+            <span>FOLLOW ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">05 / GALLERY</p>
+            <h2 class="section-title">INSIDE THE <span>GARAGE.</span></h2>
+          </div>
+          <div class="gallery-controls">
+            <button id="galleryPrev" aria-label="Previous image">←</button>
+            <button id="galleryNext" aria-label="Next image">→</button>
+          </div>
+        </div>
+
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-item active"><span>GARAGE PHOTO 01</span></div>
+          <div class="gallery-item"><span>GARAGE PHOTO 02</span></div>
+          <div class="gallery-item"><span>GARAGE PHOTO 03</span></div>
+          <div class="gallery-item"><span>GARAGE PHOTO 04</span></div>
+        </div>
+
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <p class="eyebrow">06 / REVIEWS</p>
+        <h2 class="section-title">CUSTOMER <span>REVIEWS.</span></h2>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p id="reviewText">“Replace this with a real customer review once Imran provides one.”</p>
+          <strong id="reviewName">CUSTOMER NAME</strong>
+          <div class="review-controls">
+            <button id="reviewPrev" aria-label="Previous review">←</button>
+            <button id="reviewNext" aria-label="Next review">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container contact-box">
+        <div>
+          <p class="eyebrow">07 / CONTACT</p>
+          <h2 class="section-title">COME SEE <span>US.</span></h2>
+          <p class="lead">Ready to talk about your car? Get in touch with Imran's Garage.</p>
+        </div>
+
+        <div class="contact-links">
+          <a href="tel:+910000000000"><span>CALL</span><strong>+91 XXXXX XXXXX ↗</strong></a>
+          <a href="#"><span>WHATSAPP</span><strong>MESSAGE US ↗</strong></a>
+          <a href="#"><span>LOCATION</span><strong>GET DIRECTIONS ↗</strong></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">IMRAN'S <span>GARAGE</span></div>
+      <p>BUILT AROUND CARS.</p>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Imran's Garage</span>
+      <div>
+        <a href="#home">HOME</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#">INSTAGRAM</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
