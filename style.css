@@ -1001,6 +1001,7 @@ button {
   display: flex;
   gap: 14px;
   overflow: hidden;
+  touch-action: pan-y;
 }
 
 .gallery-item {
